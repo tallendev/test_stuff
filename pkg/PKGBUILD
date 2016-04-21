@@ -1,0 +1,22 @@
+_pkgname=greedy-sched
+pkgname =$_pkgname
+pkgver=v1.0
+arch=('x86_64')
+pkgdesc="Greedy io scheduler"
+license=('GPL')
+groups=()
+depends=()
+makedepends=('gcc')
+provides=("$_pkgname")
+conflicts=("$_pkgname")
+md5sums=('SKIP')
+
+build() {
+    cd "$srcdir/$_pkgname"
+    make
+}
+
+package() {
+    cd "$srcdir/$_pkgname"
+    make install
+}
